@@ -12,7 +12,7 @@
 
 Let's start by creating a simple network. We need: 
 
-* 1x router. I don't think it really matters which one as long as it has a CLI and two G network ports
+* 1x router. I don't think it really matters which one as long as it has a CLI and two Gigabit network ports
 * 2x switches. It shouldn't matter which one. 
 * 2x PCs
 
@@ -90,11 +90,11 @@ Router(dhcp-config)#dns-server 10.176.120.10
 Router(dhcp-config)#exit
 ```
 
-WAIT: Before we go into the PC settings and turn on the `dhcp.client` breath and wait a bit. 
+WAIT: Before we go into the PC settings and turn on the `dhcp client` breathe and wait a bit. 
 
 If we turn the PC on now, it will pick any IP address between 1 and 254. We don't want that, we want to reserve some IP ranges. 
 
-Now we could have manually limited that above but we can also exclude some specific numbers from the range: 
+Now we could have manually limited that above, but we can also exclude some specific numbers from the range: 
 
 
 ### DHCP exclude
@@ -103,7 +103,7 @@ Now we could have manually limited that above but we can also exclude some speci
 Router#configure terminal
 Enter configuration commands, one per line.  End with CNTL/Z.
 Router(config)#ip dhcp excluded-address 192.168.1.1 192.168.1.99
-Router(config)# ip dhcp exclude-address 192.168.1.150 192.168.1.254
+Router(config)#ip dhcp exclude-address 192.168.1.150 192.168.1.254
 ```
 
 ### Seeing what you've done
